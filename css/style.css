@@ -5,7 +5,7 @@
  padding: 0;
  box-sizing: border-box;
  font-family: "Space Grotesk", sans-serif;
- font-weight: 400;
+ font-weight: 300;
  color: #e9e9e9;
 }
  html, body {
@@ -70,6 +70,11 @@ html body main {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 300;
     line-height: 1em;
+    background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
   #view1 .middle h1 .italic {
     font-style: italic;
@@ -83,7 +88,7 @@ html body main {
     font-size: 1.5em;
     font-weight: 500;
     font-family: "Space Grotesk", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     padding: 0.5em 1.5em;
     border-radius: 1.5em;
     color: #c6c7c9;
@@ -147,14 +152,23 @@ html body main {
     display: flex;
     justify-content: center;
     width: 100%;
+    font-size: 48.2px;
+    line-height: 51px;
+    letter-spacing: -1.2px;
+    
   }
   #view2 .top span {
     text-align: center;
     font-family: "Space Grotesk", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.02em;
     font-size: 3rem;
     width: 100%;
+    background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
   #view2 .middle {
     display: flex;
@@ -206,7 +220,6 @@ html body main {
   #view2 .bottom .btn {
     text-decoration: none;
     font-size: 1.5em;
-    font-weight: 500;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 400;
     padding: 0.5em 1.5em;
