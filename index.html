@@ -26,13 +26,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./img/logo.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="./img/logo.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./img/logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
     <nav>
         <div class="header">
             <div style="gap: 0.624em" class="left" onclick="window.location.href='/'">
-                <img src="./img/logo.png" alt="" />
+                <img src="./img/logo.png" alt="Technical Mickey" title="Technical Mickey" />
                 <span style="margin-top: 0.2em">Technical Mickey</span>
             </div>
             <div class="right">
@@ -48,12 +49,12 @@
                 <a href="/blog" class="nav-item">
                     <span>Blog</span>
                 </a>
-                <a href="#" class="nav-item">
+                <a href="/contact" class="nav-item">
                     <span>Contact</span>
                 </a>
 
                 <button class="nav-item auth-user">
-                    <a href="/signin" class="btn btn-primary sign-in"> Login </a>
+                    <a href="/login" class="btn btn-primary sign-in"> Login </a>
                 </button>
 
                 <button class="menu nav-item">
@@ -64,93 +65,22 @@
 
                     <div class="menu-panel">
                         <div class="menu-header">
-                            <span style="display: flex; align-items: center; gap: 0.5em;">
-                                <img style="width: 2em;" src="./img/logo.png" alt="" />
+                            <span style="display: flex; align-items: center; gap: 0.5em">
+                                <img style="width: 2em" src="./img/logo.png" alt="" />
                                 <span style="margin-top: 0.2em">Technical Mickey</span></span>
                         </div>
                         <div class="menu-items">
                             <a href="/" class="nav-item menu-item mobile-item">Home</a>
-                            <a href="/" class="nav-item menu-item mobile-item">About</a>
+                            <a href="/about" class="nav-item menu-item mobile-item">About</a>
                             <a href="/courses" class="nav-item menu-item mobile-item">Courses</a>
-                            <a href="#" class="nav-item menu-item mobile-item">Blog</a>
-                            <a href="#" class="nav-item menu-item mobile-item">Contact</a>
+                            <a href="/blog" class="nav-item menu-item mobile-item">Blog</a>
+                            <a href="/contact" class="nav-item menu-item mobile-item">Contact</a>
 
-                            <a href="/signin" class="nav-item menu-item mobile-item">Login</a>
+                            <a href="/login" class="nav-item menu-item mobile-item">Login</a>
                         </div>
                     </div>
                 </button>
             </div>
-
-
-            <script defer>
-                let lastTime = 0;
-                let maxFPS = 60; // Change this value to set the maximum FPS
-                let direction = 1;
-
-                const nav = document.querySelector("nav");
-                let lastScrollY = window.scrollY;
-                let navRect = null;
-
-                function navPosition(timestamp) {
-                    if (!lastTime) {
-                        lastTime = timestamp;
-                    }
-                    const elapsed = timestamp - lastTime;
-                    if (elapsed > 1000 / maxFPS) {
-                        lastTime = timestamp;
-
-                        if (navRect) {
-                            if (direction === 1 && window.scrollY > 0) {
-                                nav.style.transform = `translateY(-${navRect.height}px)`;
-                            } else {
-                                nav.style.transform = `translateY(0px)`;
-                            }
-                        } else {
-                            navRect = nav.getBoundingClientRect();
-                        }
-
-                        if (lastScrollY > window.scrollY) {
-                            direction = -1;
-                        }
-
-                        if (lastScrollY < window.scrollY) {
-                            direction = 1;
-                        }
-                        lastScrollY = window.scrollY;
-                    }
-                    requestAnimationFrame(navPosition);
-                }
-                requestAnimationFrame(navPosition);
-
-                if (document.querySelector(".notification-toggle")) {
-                    document
-                        .querySelector(".notification-toggle")
-                        .addEventListener("click", () => {
-                            document
-                                .querySelector(".notification-panel")
-                                .classList.toggle("show");
-                        });
-
-                    document
-                        .querySelector(".remove-notification-panel")
-                        .addEventListener("click", () => {
-                            document
-                                .querySelector(".notification-panel")
-                                .classList.remove("show");
-                        });
-                }
-
-                document
-                    .querySelector(".menu-toggle")
-                    .addEventListener("click", function () {
-                        if (this.classList.contains("menu-show")) {
-                            this.classList.add("menu-close");
-                        } else {
-                            this.classList.remove("menu-close");
-                        }
-                        this.classList.toggle("menu-show");
-                    });
-            </script>
         </div>
 
         <section onclick="closePopup()" class="popup discordJoinPopup">
@@ -199,7 +129,7 @@
                 <div class="mileStones">
                     <div class="mileStone">
                         <div class="text">
-                            <h2>10k+</h2>
+                            <h2>1.5k+</h2>
                             <p>Students taught</p>
                         </div>
                     </div>
@@ -224,7 +154,7 @@
             <div class="top">
                 <span>
                     Concept Mastery Made Easy
-                    <br>
+                    <br />
                     <span class="text-highlight">Our Promise to Assist You Every Step!</span>
                 </span>
             </div>
@@ -241,8 +171,280 @@
             </div>
         </section>
 
+        <!-- Course Section Start -->
+        <section class="view" id="view3">
+            <div class="top">
+                <h1>
+                    <span>Our Courses</span>
+                </h1>
+            </div>
+            <div class="bottom">
+                <div class="courses">
+                    <div class="course-wrapper">
+                        <a href="#" class="course">
+                            <div class="course-image">
+                                <img alt="" src="./img/Frontend-Creation.png" />
+                            </div>
 
+                            <div class="course-body">
+                                <h2>Frontend Creation</h2>
+                                <p>
+                                    Master HTML, CSS, and JavaScript from beginner to advanced
+                                    in the comprehensive 'Frontend Creation' course! Gain
+                                    practical skills and in-depth knowledge.
+                                </p>
+                            </div>
+
+                            <div class="course-instructor">
+                                <p>
+                                    <span style="text-decoration: line-through; opacity: 0.3">₹ 4999</span>
+                                    <span> ₹ 1499 </span>
+                                </p>
+
+                                <p>
+                                    <span> Buy Now</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="course-wrapper">
+                        <a href="#" class="course">
+                            <div class="course-image">
+                                <img alt="" src="./img/Backend-Creation.png" />
+                            </div>
+
+                            <div class="course-body">
+                                <h2>Backend Creation</h2>
+                                <p>
+                                    Explore the essentials of backend development with 'Backend
+                                    Creation,' a comprehensive course focusing on Node.js,
+                                    Express, and database fundamentals.
+                                </p>
+                            </div>
+
+                            <div class="course-instructor">
+                                <p>
+                                    <span style="text-decoration: line-through; opacity: 0.3">₹ 4999</span>
+                                    <span> ₹ 1499 </span>
+                                </p>
+
+                                <p>
+                                    <span> Buy Now</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="course-wrapper">
+                        <a href="#" class="course">
+                            <div class="course-image">
+                                <img alt="" src="./img/Java-DSA-Mastery.png" />
+                            </div>
+
+                            <div class="course-body">
+                                <h2>Java &amp; DSA Mastery</h2>
+                                <p>
+                                    Java & DSA Mastery course provides hands-on practice and
+                                    comprehensive understanding to elevate your programming
+                                    skills to the next level.
+                                </p>
+                            </div>
+
+                            <div class="course-instructor">
+                                <p>
+                                    <span style="text-decoration: line-through; opacity: 0.3">₹ 4999</span>
+                                    <span> ₹ 1499 </span>
+                                </p>
+
+                                <p>
+                                    <span> Buy Now</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 section -->
+        <section class="view" id="view4">
+            <div class="top">
+                <h1>
+                    <span> 1000+ Alumni Placed At </span>
+                </h1>
+            </div>
+            <div class="middle">
+                <div class="companies">
+                    <div class="upper">
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/delo.png" alt="" />
+                            </picture>
+                        </div>
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/accenture.png" alt="" />
+                            </picture>
+                        </div>
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/airtel.png" alt="" />
+                            </picture>
+                        </div>
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/amazon.png" alt="" />
+                            </picture>
+                        </div>
+                    </div>
+
+                    <div class="lower">
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/infobeans.png" alt="" />
+                            </picture>
+                        </div>
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/Infosys.png" alt="" />
+                            </picture>
+                        </div>
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/nagarro.png" alt="" />
+                            </picture>
+                        </div>
+                        <div class="companie">
+                            <picture>
+                                <img loading="lazy" src="./img/paytm.png" alt="" />
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section Start -->
+        <section class="view" id="view3">
+            <div class="top">
+                <h1>
+                    <span>Our Blog</span>
+                </h1>
+            </div>
+            <div class="bottom">
+                <div class="courses">
+                    <div class="course-wrapper">
+                        <a href="#" class="course">
+                            <div class="course-image">
+                                <img alt="" src="./img/Frontend-Creation.png" />
+                            </div>
+
+                            <div class="course-body">
+                                <h2>JavaScript: A Beginner's Guide to Programming Magic</h2>
+                            </div>
+
+                            <div class="course-instructor">
+                                <p>
+                                    <span>Read More</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="course-wrapper">
+                        <a href="#" class="course">
+                            <div class="course-image">
+                                <img alt="" src="./img/Backend-Creation.png" />
+                            </div>
+
+                            <div class="course-body">
+                                <h2>Primitive v/s Reference datatypes in JavaScript</h2>
+                            </div>
+
+                            <div class="course-instructor">
+                                <p>
+                                    <span>Read More</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="course-wrapper">
+                        <a href="#" class="course">
+                            <div class="course-image">
+                                <img alt="" src="./img/Java-DSA-Mastery.png" />
+                            </div>
+
+                            <div class="course-body">
+                                <h2>Learning with Prototypes (LwP)</h2>
+                            </div>
+
+                            <div class="course-instructor">
+                                <p>
+                                    <span>Read More</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="top">
+                <div class="footer-section">
+                    <p style="display: flex; align-items: center; gap: 1rem">
+                        <img class="logo" src="./img/logo.png" alt="Technical Mickey"
+                            title="Technical Mickey" /><span>Technical Mickey</span>
+                    </p>
+
+                    <p>Our Program make you Job Ready for your Dream Company 🚀</p>
+                </div>
+
+                <div class="footer-section">
+                    <h1>ABOUT US</h1>
+                    <div class="options">
+                        <a target="_blank" href="/aboutUs">About Us</a>
+                        <a href="/contact">Contact</a>
+                        <a href="/blog">Blog</a>
+                        <a href="mailto:info@technicalmickey.com">Support</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h1>POLICIES</h1>
+                    <div class="options">
+                        <a target="_blank" href="">Privacy Policy</a>
+                        <a target="_blank" href="f">Terms and Condition</a>
+                        <a target="_blank" href="">Refund Policy</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h1>GET IN TOUCH</h1>
+
+                    <div class="options">
+                        <a href="tel:+917000907458">+91 7000907458</a>
+                        <a href="mailto:info@technicalmickey.com">info@technicalmickey.com</a>
+                        <a target="_blank" href="">Pune, Maharastra</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <h1 style="text-align: center">
+                    Copyright © 2024 Technical Mickey | All Rights Reserved.
+                </h1>
+                <div class="socials">
+                    <a target="_blank" href="https://www.instagram.com/technicalmickey"><i
+                            class="ri-instagram-fill"></i></a>
+                    <a target="_blank" href="https://in.linkedin.com/company/technicalmickey"><i
+                            class="ri-linkedin-box-fill"></i></a>
+                    <a target="_blank" href=""><i class="ri-discord-fill"> </i></a>
+                    <a target="_blank" href="https://www.youtube.com/@technicalmickey"><i
+                            class="ri-youtube-fill"></i></a>
+                    <a target="_blank" href="https://twitter.com/technicalmickey"><i class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script src="./js/nav.js" defer></script>
 </body>
 
 </html>
