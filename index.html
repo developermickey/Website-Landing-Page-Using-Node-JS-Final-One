@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Technical Mickey | Learn Coding in India</title>
+    <meta name="description"
+        content="Master modern web design and tech: build sites with animations, learn award-winning techniques, and dive into Node.js, Java, Python, and more!" />
+    <meta name="keywords"
+        content="modern web technologies, animations, award-winning websites, Node.js, MongoDB, Socket.io, DBMS, Java, C, Python, data analysis, blockchain, CPT, aptitude, HTML, CSS, JavaScript" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/logo.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./img/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/logo.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/logo.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+</head>
+
+<body>
+    <nav>
+        <div class="header">
+            <div style="gap: 0.624em" class="left" onclick="window.location.href='/'">
+                <img src="./img/logo.png" alt="" />
+                <span style="margin-top: 0.2em">Technical Mickey</span>
+            </div>
+            <div class="right">
+                <a href="/" class="nav-item">
+                    <span>Home</span>
+                </a>
+                <a href="/about" class="nav-item">
+                    <span>About</span>
+                </a>
+                <a href="/courses" class="nav-item">
+                    <span>Courses</span>
+                </a>
+                <a href="/blog" class="nav-item">
+                    <span>Blog</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>Contact</span>
+                </a>
+
+                <button class="nav-item auth-user">
+                    <a href="/signin" class="btn btn-primary sign-in"> Login </a>
+                </button>
+
+                <button class="menu nav-item">
+                    <div class="menu-toggle">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                    </div>
+
+                    <div class="menu-panel">
+                        <div class="menu-header">
+                            <span style="display: flex; align-items: center; gap: 0.5em;">
+                                <img style="width: 2em;" src="./img/logo.png" alt="" />
+                                <span style="margin-top: 0.2em">Technical Mickey</span></span>
+                        </div>
+                        <div class="menu-items">
+                            <a href="/" class="nav-item menu-item mobile-item">Home</a>
+                            <a href="/" class="nav-item menu-item mobile-item">About</a>
+                            <a href="/courses" class="nav-item menu-item mobile-item">Courses</a>
+                            <a href="#" class="nav-item menu-item mobile-item">Blog</a>
+                            <a href="#" class="nav-item menu-item mobile-item">Contact</a>
+
+                            <a href="/signin" class="nav-item menu-item mobile-item">Login</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+
+            <script defer>
+                let lastTime = 0;
+                let maxFPS = 60; // Change this value to set the maximum FPS
+                let direction = 1;
+
+                const nav = document.querySelector("nav");
+                let lastScrollY = window.scrollY;
+                let navRect = null;
+
+                function navPosition(timestamp) {
+                    if (!lastTime) {
+                        lastTime = timestamp;
+                    }
+                    const elapsed = timestamp - lastTime;
+                    if (elapsed > 1000 / maxFPS) {
+                        lastTime = timestamp;
+
+                        if (navRect) {
+                            if (direction === 1 && window.scrollY > 0) {
+                                nav.style.transform = `translateY(-${navRect.height}px)`;
+                            } else {
+                                nav.style.transform = `translateY(0px)`;
+                            }
+                        } else {
+                            navRect = nav.getBoundingClientRect();
+                        }
+
+                        if (lastScrollY > window.scrollY) {
+                            direction = -1;
+                        }
+
+                        if (lastScrollY < window.scrollY) {
+                            direction = 1;
+                        }
+                        lastScrollY = window.scrollY;
+                    }
+                    requestAnimationFrame(navPosition);
+                }
+                requestAnimationFrame(navPosition);
+
+                if (document.querySelector(".notification-toggle")) {
+                    document
+                        .querySelector(".notification-toggle")
+                        .addEventListener("click", () => {
+                            document
+                                .querySelector(".notification-panel")
+                                .classList.toggle("show");
+                        });
+
+                    document
+                        .querySelector(".remove-notification-panel")
+                        .addEventListener("click", () => {
+                            document
+                                .querySelector(".notification-panel")
+                                .classList.remove("show");
+                        });
+                }
+
+                document
+                    .querySelector(".menu-toggle")
+                    .addEventListener("click", function () {
+                        if (this.classList.contains("menu-show")) {
+                            this.classList.add("menu-close");
+                        } else {
+                            this.classList.remove("menu-close");
+                        }
+                        this.classList.toggle("menu-show");
+                    });
+            </script>
+        </div>
+
+        <section onclick="closePopup()" class="popup discordJoinPopup">
+            <div class="center">
+                <div class="images">
+                    <img src="#" alt="" />
+                    <i class="ri-add-line"></i>
+                    <img src="#" alt="" />
+                </div>
+                <div class="text">
+                    <h3>Authorize discord to access course support</h3>
+                    <small>
+                        in order to access our course support channel on the discord you
+                        have to authorize us from the discord.
+                    </small>
+
+                    <div class="buttons">
+                        <button class="cancel">Cancel</button>
+                        <button onclick="window.open('/classroom/joinChannel/channle/role')" class="authorize">
+                            Authorize
+                        </button>
+                    </div>
+                </div>
+                <div onclick="closeDiscordPopup()" class="closePopup">
+                    <i class="ri-close-circle-line"></i>
+                </div>
+            </div>
+        </section>
+    </nav>
+    <main>
+        <section id="view1" class="view">
+            <div class="top"></div>
+            <div class="middle">
+                <h1>
+                    <span>
+                        Learn to Code.<br />
+                        Build a Portfolio.<br />
+                        Get Hired.<br />
+                    </span>
+                </h1>
+                <a href="/courses" class="btn btn-primary checkout shadow-bottom shadow-primary">
+                    Explore Now
+                </a>
+            </div>
+            <div class="bottom">
+                <div class="mileStones">
+                    <div class="mileStone">
+                        <div class="text">
+                            <h2>10k+</h2>
+                            <p>Students taught</p>
+                        </div>
+                    </div>
+
+                    <div class="mileStone">
+                        <div class="text">
+                            <h2>10+</h2>
+                            <p>Placement Partners</p>
+                        </div>
+                    </div>
+                    <div class="mileStone">
+                        <div class="text">
+                            <h2>3k+</h2>
+                            <p>Youtube Subs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="view" id="view2">
+            <div class="top">
+                <span>
+                    Concept Mastery Made Easy
+                    <br>
+                    <span class="text-highlight">Our Promise to Assist You Every Step!</span>
+                </span>
+            </div>
+            <div class="middle">
+                <div class="video-container">
+                    <iframe frameborder="0" src="https://www.youtube.com/embed/0D5hPD2SJgE"></iframe>
+                </div>
+            </div>
+            <div class="bottom">
+                <a href="https://www.youtube.com/@technicalmickey" target="_blank"
+                    class="btn btn-primary freevideo shadow-bottom shadow-primary">
+                    Watch Free Video
+                </a>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
