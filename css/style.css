@@ -1,601 +1,690 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: "Space Grotesk", sans-serif;
- font-weight: 300;
- color: #e9e9e9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  color: #e9e9e9;
 }
- html, body {
- width: 100%;
- height: 100%;
- background-image: url(../img/body.svg);
- background-position: top;
- background-repeat: no-repeat;
- background-size: cover;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/body.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 @media screen and (max-width: 768px) {
-html, body {
-    
-      background: url(../img/mobile-bg.svg);
-      background-position: top;
- background-repeat: no-repeat;
- background-size: cover;
- height: 3570px;
+
+  html,
+  body {
+
+    background: url(../img/mobile-bg.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 3570px;
   }
 
 }
+
 html body main {
-    max-width: 150rem;
+  max-width: 150rem;
+}
+
+html body nav .header {
+  max-width: 150rem;
+}
+
+main {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+main>* {
+  flex-shrink: 0;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 4.9rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    min-height: initial;
   }
-  html body nav .header {
-    max-width: 150rem;
-  }
-  
-  main {
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-  }
-  main > * {
-    flex-shrink: 0;
-  }
-  
-  .view {
-    width: 100%;
-    min-height: 100vh;
-    padding: 6rem 4.9rem;
-  }
-  @media (max-width: 600px) {
-    .view {
-      min-height: initial;
-    }
-  }
-  
+}
+
+#view1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}
+
+#view1 .middle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 4rem;
+  font-size: clamp(10px, 1.2vw, 1rem);
+  position: relative;
+}
+
+#view1 .middle h1 {
+  line-height: 0.845em;
+  font-size: 5.7em;
+  font-weight: 300 !important;
+}
+
+#view1 .middle h1 span {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  line-height: 1em;
+  background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+#view1 .middle h1 .italic {
+  font-style: italic;
+  font-weight: 100;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+#view1 .middle .checkout {
+  width: 200px;
+  height: 50px;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  padding: 0.5em 1.5em;
+  border-radius: 1.5em;
+  color: #c6c7c9;
+  border: 2px solid #c6c7c9;
+}
+
+#view1 .bottom {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#view1 .bottom .mileStones {
+  padding-top: 1em;
+  display: flex;
+  font-size: 1.4em;
+  gap: 5.4em;
+}
+
+#view1 .bottom .mileStones .mileStone {
+  text-align: center;
+}
+
+#view1 .bottom .mileStones .mileStone .text h1 {
+  font-size: 1.96em;
+}
+
+#view1 .bottom .mileStones .mileStone .text p {
+  font-size: 1em;
+  font-family: "Space Grotesk", sans-serif;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
   #view1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
+    padding-top: 10vh;
+    height: 85vh;
   }
+
   #view1 .middle {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 4rem;
-    font-size: clamp(10px, 1.2vw, 1rem);
-    position: relative;
+    font-size: 0.75rem;
   }
-  #view1 .middle h1 {
-    line-height: 0.845em;
-    font-size: 5.7em;
-    font-weight: 300 !important;
+
+  #view1 .middle h1 br {
+    display: none;
   }
-  #view1 .middle h1 span {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 300;
-    line-height: 1em;
-    background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
-  #view1 .middle h1 .italic {
-    font-style: italic;
-    font-weight: 100;
-    font-family: "Space Grotesk", sans-serif;
-  }
+
   #view1 .middle .checkout {
-    width: 200px;
-    height: 50px;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 500;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 300;
-    padding: 0.5em 1.5em;
-    border-radius: 1.5em;
-    color: #c6c7c9;
-    border: 2px solid #c6c7c9;
+    font-size: 2.2em;
   }
 
-  #view1 .bottom {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
   #view1 .bottom .mileStones {
-    padding-top: 1em;
-    display: flex;
-    font-size: 1.4em;
-    gap: 5.4em;
+    gap: 3em;
   }
+
   #view1 .bottom .mileStones .mileStone {
-    text-align: center;
+    font-size: 1rem;
   }
-  #view1 .bottom .mileStones .mileStone .text h1 {
-    font-size: 1.96em;
-  }
-  #view1 .bottom .mileStones .mileStone .text p {
-    font-size: 1em;
-    font-family: "Space Grotesk", sans-serif;
-    white-space: nowrap;
-  }
- 
-  @media (max-width: 600px) {
-    #view1 {
-      padding-top: 10vh;
-      height: 85vh;
-    }
-    #view1 .middle {
-      font-size: 0.75rem;
-    }
-    #view1 .middle h1 br {
-      display: none;
-    }
-    #view1 .middle .checkout {
-      font-size: 2.2em;
-    }
-    #view1 .bottom .mileStones {
-      gap: 3em;
-    }
-    #view1 .bottom .mileStones .mileStone {
-      font-size: 1rem;
-    }
-  }
+}
 
-  /* Home Page Section 2 */
-  #view2 {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    margin-top: 4rem;
-    justify-content: space-around;
-  }
-  #view2 .top {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 48.2px;
-    line-height: 51px;
-    letter-spacing: -1.2px;
-    
-  }
-  #view2 .top span {
-    text-align: center;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 400;
-    line-height: 1.02em;
-    font-size: 3rem;
-    width: 100%;
-    background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
-  #view2 .middle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #view2 .middle .video-container {
-    aspect-ratio: 16/9;
-    position: relative;
-    max-width: 68rem;
-    border-radius: 1.7rem;
-    overflow: hidden;
-    width: 100%;
-    border: none;
-  }
-  #view2 .middle .video-container img,
-  #view2 .middle .video-container iframe {
-    height: 100%;
-    width: 100%;
-  }
-  #view2 .middle .video-container .play-pause {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    cursor: pointer;
-  }
-  #view2 .middle .video-container .play-pause i {
-    font-size: 4em;
-    aspect-ratio: 1/1;
-    display: flex;
-    padding: 0.9em;
-    outline: solid 0.05em var(--white);
-    border-radius: 50%;
-    color: var(--white);
-  }
-  #view2 .middle .video-container .play-pause i::before {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    margin-left: 0.08em;
-  }
-  #view2 .bottom {
-    display: flex;
-    justify-content: center;
-  }
-  #view2 .bottom .btn {
-    text-decoration: none;
-    font-size: 1.5em;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 400;
-    padding: 0.5em 1.5em;
-    border-radius: 1.5em;
-    color: #c6c7c9;
-    border: 2px solid #c6c7c9;
-  }
-  @media (max-width: 600px) {
-    #view2 .top span {
-      font-size: 1.75rem;
-    }
-    #view2 .top span br {
-      display: none;
-    }
-    #view2 .middle .video-container {
-      border-radius: 0.5rem;
-    }
-    #view2 .bottom .btn {
-      font-size: 1.5rem;
-    }
-  }
+/* Home Page Section 2 */
+#view2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+  justify-content: space-around;
+}
 
-    /* Home Page Section 3 */
+#view2 .top {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 48.2px;
+  line-height: 51px;
+  letter-spacing: -1.2px;
 
-    #view3 {
-      padding-top: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-      margin-top: 6rem;
-    }
-    #view3 .top h1 {
-      font-size: 3em;
-      font-weight: 300;
-      text-align: center;
-      font-family: "Space Grotesk", sans-serif;
-    font-weight: 400;
-    }
-    #view3 .top h1 span {
-      text-align: center;
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 400;
-      line-height: 1.02em;
-      font-size: 3rem;
-      width: 100%;
-      background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
-    #view3 .bottom .courses {
-      display: grid;
-      gap: 2rem;
-      row-gap: 7rem;
-      flex-wrap: wrap;
-      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    }
-    #view3 .bottom .courses .course-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      flex: 1 0 25rem;
-    }
-    #view3 .bottom .courses .course-wrapper .course {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      width: -moz-fit-content;
-      width: fit-content;
-      --border-radius: 1rem;
-      --body-padding: 1.8rem;
-      --body-padding-vertical: 2rem;
-      width: 100%;
-      text-decoration: none;
-      border-radius: var(--border-radius);
-      background-color: var(--ui-element-color);
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-image {
-      aspect-ratio: 16/9;
-      border-radius: var(--border-radius);
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-image img {
-      height: 100%;
-      width: 100%;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-image .sub-tags {
-      position: absolute;
-      top: 0.8em;
-      right: 0.75em;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-image .sub-tags .sub-tag {
-      background-color: var(--mercury);
-      color: var(--black);
-      padding: 0.4em 1.3em;
-      border-radius: 0.45em;
-      text-transform: uppercase;
-      font-size: 0.65rem;
-      font-weight: 800;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-body {
-      flex: 1 0 auto;
-      padding: var(--body-padding-vertical) var(--body-padding);
-      padding-right: calc(var(--body-padding) - 0.2em);
-      border-radius: 0.8rem;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      flex-grow: 1;
-      letter-spacing: 0.02em;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-body h2 {
-      font-size: 1.6em;
-      font-weight: 400;
-      margin-bottom: 0.7rem;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-body p {
-      font-size: 1em;
-      font-weight: 300;
-      color: var(--boulder);
-      line-height: 1.5em;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-body-tags {
-      padding: var(--body-padding);
-      display: flex;
-      flex-direction: column;
-      padding-top: 1.5rem;
-      position: relative;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-body-tags .devider {
-      width: 95%;
-      height: 0.05em;
-      background-color: var(--fuscous-gray);
-      position: absolute;
-      top: 0%;
-      transform: translateX(-50%);
-      left: 50%;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-body-tags .tags {
-      gap: 0.7rem;
-      flex-wrap: wrap;
-      display: flex;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-body-tags .tags .tag {
-      background-color: var(--ui-element-highlight-color);
-      padding: 0.7rem 1.1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: -moz-fit-content;
-      width: fit-content;
-      border-radius: 0.35rem;
-      color: var(--text-color);
-      white-space: nowrap;
-      width: fit-content;
-      font-size: 1em;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-instructor {
-      padding: calc(var(--body-padding-vertical) - 0.8em) var(--body-padding);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      background-color: var(--ui-element-highlight-color);
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-instructor p {
-      display: flex;
-      color: var(--boulder);
-      align-items: flex-end;
-      gap: 0.4rem;
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-instructor p > span {
-      color: var(--text-color);
-    }
-    #view3 .bottom .courses .course-wrapper .course .course-instructor span {
-      font-size: 1.2em;
-      color: var(--text-color);
-    }
-    #view3 .bottom .courses .course-wrapper.commingSoon .course-image {
-      position: relative;
-    }
-    #view3 .bottom .courses .course-wrapper.commingSoon .course-image::after {
-      content: "Coming soon";
-      background-color: rgba(24, 24, 24, 0.7);
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--Wild-Sand);
-      font-size: 1.6em;
-      font-family: "NeueMachina";
-    }
-    #view3 .bottom .courses .course-wrapper .buy-now {
-      width: 100%;
-      font-size: 1.7rem;
-      font-weight: 600;
-      padding-top: 0.4em;
-      padding-bottom: 0.4em;
-    }
-    @media (max-width: 600px) {
-      #view3 {
-        padding: 6rem 0;
-        margin-top: 3rem;
-        gap: 2em;
-      }
-      #view3 > * {
-        padding: 0 var(--main-horizontal-padding);
-      }
-      #view3 .top h1 {
-        font-size: 1.5rem;
-      }
-      #view3 .bottom {
-        padding: 0 0;
-      }
-      #view3 .bottom .courses {
-        padding: 0 var(--main-horizontal-padding);
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 1rem;
-      }
-      #view3 .bottom .courses .course-wrapper {
-        flex: 0 0 89%;
-        scroll-snap-align: center;
-      }
-      #view3 .bottom .courses .course-wrapper .course {
-        font-size: 1.1rem;
-      }
-      #view3 .bottom .courses .course-wrapper .course .course-body h2 {
-        font-size: 1.4em;
-      }
-      #view3 .bottom .courses .course-wrapper .course .course-body p {
-        font-size: 1em;
-      }
-      #view3 .bottom .courses .course-wrapper .course .course-body-tags .tags .tag {
-        font-size: 1em;
-      }
-      #view3 .bottom .courses .course-wrapper .course .course-instructor {
-        padding: 1em;
-        margin-bottom: 2em;
-      }
-      #view3 .bottom .courses .course-wrapper .course .course-instructor p {
-        font-size: 0.9em;
-      }
-      #view3 .bottom .courses .course-wrapper .course .course-instructor span {
-        font-size: 1.3em;
-      }
-      #view3 .bottom .courses .course-wrapper .buy-now {
-        padding-top: 0.6em;
-        padding-bottom: 0.6em;
-        font-size: 1.4em;
-      }
-    }
-    
+}
 
-    /* page 5 section */
+#view2 .top span {
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  line-height: 1.02em;
+  font-size: 3rem;
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
-    #view4 {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-    #view4 .top {
-      display: flex;
-      justify-content: center;
-    }
-    #view4 .top h1 {
-      text-align: center;
-      max-width: 53rem;
-    }
-    #view4 .top h1 span {
-      text-align: center;
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 400;
-      line-height: 1.02em;
-      font-size: 3rem;
-      width: 100%;
-      background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
-    
-    #view4 .middle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 40vh;
-    }
-    #view4 .middle .companies {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 100%;
-    }
-    #view4 .middle .companies .upper,
-    #view4 .middle .companies .lower {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-    #view4 .middle .companies .upper .companie,
-    #view4 .middle .companies .lower .companie {
-      width: 17%;
-      max-width: 10rem;
-      aspect-ratio: 1/1;
-      position: relative;
+#view2 .middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#view2 .middle .video-container {
+  aspect-ratio: 16/9;
+  position: relative;
+  max-width: 68rem;
+  border-radius: 1.7rem;
   overflow: hidden;
-    }
-    #view4 .middle .companies .upper .companie img,
-    #view4 .middle .companies .lower .companie img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: contain;
-         object-fit: contain;
-         filter: brightness(0) invert(1);
-    }
-    #view4 .bottom {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-    #view4 .bottom .btn {
-      font-size: 1.7rem;
-    }
-    @media (max-width: 600px) {
-      #view4 {
-        gap: 4rem;
-        margin: 0;
-        margin-top: 5rem;
-      }
-      #view4 .top h1 span {
-        font-size: 2.4rem;
-      }
-      #view4 .middle .companies {
-        gap: 1rem;
-      }
-      #view4 .middle .companies > * {
-        gap: 1rem;
-      }
-      #view4 .middle .companies .companie {
-        max-width: 6rem;
-      }
-      #view4 .bottom .btn {
-        display: none;
-      }
-    }
+  width: 100%;
+  border: none;
+}
 
+#view2 .middle .video-container img,
+#view2 .middle .video-container iframe {
+  height: 100%;
+  width: 100%;
+}
+
+#view2 .middle .video-container .play-pause {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+#view2 .middle .video-container .play-pause i {
+  font-size: 4em;
+  aspect-ratio: 1/1;
+  display: flex;
+  padding: 0.9em;
+  outline: solid 0.05em var(--white);
+  border-radius: 50%;
+  color: var(--white);
+}
+
+#view2 .middle .video-container .play-pause i::before {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  margin-left: 0.08em;
+}
+
+#view2 .bottom {
+  display: flex;
+  justify-content: center;
+}
+
+#view2 .bottom .btn {
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  padding: 0.5em 1.5em;
+  border-radius: 1.5em;
+  color: #c6c7c9;
+  border: 2px solid #c6c7c9;
+}
+
+@media (max-width: 600px) {
+  #view2 .top span {
+    font-size: 1.75rem;
+  }
+
+  #view2 .top span br {
+    display: none;
+  }
+
+  #view2 .middle .video-container {
+    border-radius: 0.5rem;
+  }
+
+  #view2 .bottom .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* Home Page Section 3 */
+
+#view3 {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 6rem;
+}
+
+#view3 .top h1 {
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+}
+
+#view3 .top h1 span {
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  line-height: 1.02em;
+  font-size: 3rem;
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+#view3 .bottom .courses {
+  display: grid;
+  gap: 2rem;
+  row-gap: 7rem;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+}
+
+#view3 .bottom .courses .course-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1 0 25rem;
+}
+
+#view3 .bottom .courses .course-wrapper .course {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  --border-radius: 1rem;
+  --body-padding: 1.8rem;
+  --body-padding-vertical: 2rem;
+  width: 100%;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  background-color: var(--ui-element-color);
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-image {
+  aspect-ratio: 16/9;
+  border-radius: var(--border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-image img {
+  height: 100%;
+  width: 100%;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-image .sub-tags {
+  position: absolute;
+  top: 0.8em;
+  right: 0.75em;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-image .sub-tags .sub-tag {
+  background-color: var(--mercury);
+  color: var(--black);
+  padding: 0.4em 1.3em;
+  border-radius: 0.45em;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-body {
+  flex: 1 0 auto;
+  padding: var(--body-padding-vertical) var(--body-padding);
+  padding-right: calc(var(--body-padding) - 0.2em);
+  border-radius: 0.8rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  flex-grow: 1;
+  letter-spacing: 0.02em;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-body h2 {
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-body p {
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--boulder);
+  line-height: 1.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-body-tags {
+  padding: var(--body-padding);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  position: relative;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-body-tags .devider {
+  width: 95%;
+  height: 0.05em;
+  background-color: var(--fuscous-gray);
+  position: absolute;
+  top: 0%;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-body-tags .tags {
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-body-tags .tags .tag {
+  background-color: var(--ui-element-highlight-color);
+  padding: 0.7rem 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.35rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  width: fit-content;
+  font-size: 1em;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-instructor {
+  padding: calc(var(--body-padding-vertical) - 0.8em) var(--body-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--ui-element-highlight-color);
+  /* border-radius: var(--border-radius); */
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-instructor p {
+  display: flex;
+  color: var(--boulder);
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-instructor p>span {
+  color: var(--text-color);
+}
+
+#view3 .bottom .courses .course-wrapper .course .course-instructor span {
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+#view3 .bottom .courses .course-wrapper.commingSoon .course-image {
+  position: relative;
+}
+
+#view3 .bottom .courses .course-wrapper.commingSoon .course-image::after {
+  content: "Coming soon";
+  background-color: rgba(24, 24, 24, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Wild-Sand);
+  font-size: 1.6em;
+  font-family: "NeueMachina";
+}
+
+#view3 .bottom .courses .course-wrapper .buy-now {
+  width: 100%;
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+@media (max-width: 600px) {
+  #view3 {
+    padding: 6rem 0;
+    margin-top: 3rem;
+    gap: 2em;
+  }
+
+  #view3>* {
+    padding: 0 var(--main-horizontal-padding);
+  }
+
+  #view3 .top h1 {
+    font-size: 1.5rem;
+  }
+
+  #view3 .bottom {
+    padding: 0 0;
+  }
+
+  #view3 .bottom .courses {
+    padding: 0 var(--main-horizontal-padding);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+  }
+
+  #view3 .bottom .courses .course-wrapper {
+    flex: 0 0 89%;
+    scroll-snap-align: center;
+  }
+
+  #view3 .bottom .courses .course-wrapper .course {
+    font-size: 1.1rem;
+  }
+
+  #view3 .bottom .courses .course-wrapper .course .course-body h2 {
+    font-size: 1.4em;
+  }
+
+  #view3 .bottom .courses .course-wrapper .course .course-body p {
+    font-size: 1em;
+  }
+
+  #view3 .bottom .courses .course-wrapper .course .course-body-tags .tags .tag {
+    font-size: 1em;
+  }
+
+  #view3 .bottom .courses .course-wrapper .course .course-instructor {
+    padding: 1em;
+  }
+
+  #view3 .bottom .courses .course-wrapper .course .course-instructor p {
+    font-size: 0.9em;
+  }
+
+  #view3 .bottom .courses .course-wrapper .course .course-instructor span {
+    font-size: 1.3em;
+  }
+
+  #view3 .bottom .courses .course-wrapper .buy-now {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    font-size: 1.4em;
+  }
+}
+
+
+/* page 5 section */
+
+#view4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#view4 .top {
+  display: flex;
+  justify-content: center;
+}
+
+#view4 .top h1 {
+  text-align: center;
+  max-width: 53rem;
+}
+
+#view4 .top h1 span {
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  line-height: 1.02em;
+  font-size: 3rem;
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+#view4 .middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40vh;
+}
+
+#view4 .middle .companies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#view4 .middle .companies .upper,
+#view4 .middle .companies .lower {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#view4 .middle .companies .upper .companie,
+#view4 .middle .companies .lower .companie {
+  width: 17%;
+  max-width: 10rem;
+  aspect-ratio: 1/1;
+  position: relative;
+  overflow: hidden;
+}
+
+#view4 .middle .companies .upper .companie img,
+#view4 .middle .companies .lower .companie img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+#view4 .bottom {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#view4 .bottom .btn {
+  font-size: 1.7rem;
+}
+
+@media (max-width: 600px) {
+  #view4 {
+    gap: 4rem;
+    margin: 0;
+    margin-top: 5rem;
+  }
+
+  #view4 .top h1 span {
+    font-size: 2.4rem;
+  }
+
+  #view4 .middle .companies {
+    gap: 1rem;
+  }
+
+  #view4 .middle .companies>* {
+    gap: 1rem;
+  }
+
+  #view4 .middle .companies .companie {
+    max-width: 6rem;
+  }
+
+  #view4 .bottom .btn {
+    display: none;
+  }
+}
